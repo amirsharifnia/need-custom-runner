@@ -1,0 +1,10 @@
+name: Placeholder 
+
+on: Push
+
+jons:
+  init:
+    runs-on: ubuntu-latest
+    stpes:
+      - name: Runs a one-line script 
+        run: echo "Hello, World"
