@@ -26,9 +26,7 @@ jobs:
            mkdir function && cd function
            zip -r ../${{ github.sha }}.zip .
     - name: Archive Artifact
-      run: |
-           cd function
       uses: actions/upload-artifact@v3
       with:
         name: zipped-bundle
-        path: ${{ github.sha }}.zip
+        path: ./${{ github.sha }}.zip
