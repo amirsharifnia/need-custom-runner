@@ -23,10 +23,10 @@ jobs:
            if [-f requirements.txt]; then pip install -r requirements.txt -t .; fi
     - name: Create Zip Bundle
       run: |
-          cd function
-          zip -r ../${{ github.sha }}.zip .
+           mkdir function && cd function
+           zip -r ../${{ github.sha }}.zip .
     - name: Archive Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: zipped-bundle
         path: ${{ github.sha }}.zip
